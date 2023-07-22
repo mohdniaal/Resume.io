@@ -1,5 +1,5 @@
-// import styled from 'styled-components/macro'
 import styled from 'styled-components';
+import farbus from '../src/Public/farbus.webp'
 
 
 const Main = styled.div`
@@ -207,12 +207,12 @@ text-transform: uppercase;
 const Home_hero_title = styled.div`
     font-weight: 700;
     margin-bottom: 12px;
+    margin-top:20px;
     font-size: 46px;
     line-height: 48px;
     max-width: 740px;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-           `
+    font-family: 'Montserrat', sans-serif;           `
 
 const Home_hero_subtitle = styled.div`
 font-size: 22px;
@@ -245,17 +245,98 @@ margin-right: 0;
 margin-top:20px
 `
 
-const Home_hero_counter=styled.div`
+const Home_hero_counter = styled.div`
 display: block;
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 16px;
+    margin-top:20px;
     padding-left: 18px;
     position: relative;
+    
 `
+const Hero_animated = styled.div`
+-webkit-animation: pulse 1.5s ease infinite;
+    animation: pulse 1.5s ease infinite;
+    background-color: var(--green-50);
+    border-radius: 3px;
+    content: "";
+    height: 6px;
+    left: 4px;
+    position: absolute;
+    top: 8px;
+    width: 6px;`
 
+const Home_hero_animated_label = styled.div`
+display: inline-block;
+    position: relative;
+    -webkit-transition: width .3s ease;
+    transition: width .3s ease;
+    `
 
+const home_hero__counter_number = styled.div`
+    display: inline-block;
+    will-change: transform;`
 
+const Home_hero_resume = styled.a`
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-name: heroResumeSlide;
+    animation-name: heroResumeSlide;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+    animation-timing-function: cubic-bezier(0,1,0,1);
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 770px;
+    background: url("images/logo.png") no-repeat;
+    `
+const Logo = styled.div`
+    background-color: var(--white);
+    border-bottom: 1px solid var(--neutral-10);
+    border-top: 1px solid var(--neutral-10);
+    padding: 18px 0;
+`
+const Grid_container = styled.div`
+margin-left: auto;
+    margin-right: auto;
+    max-width: calc(var(--container-width) + 88px);
+    padding-left: 44px;
+    padding-right: 44px;
+    width: 100%;
+    `
+
+const Logo_list = styled.div`
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 -28px;
+    `
+
+const Logo_item = styled.div`
+    background-color:#eff2f9;
+    background-repeat: no-repeat;
+    background-size: 141px auto;
+    border-radius: 4px;
+    display: inline-block;
+    height: 40px;
+    margin: 8px 28px;
+    position: relative;
+    width: 141px;`
+
+const Farbus = styled.div`
+    background-image=url(${farbus});
+    
+    `
 
 
 
@@ -326,14 +407,35 @@ const Home = () => {
                                     - try now for free!</Home_hero_subtitle>
                                 <Home_hero_cta>
                                     <Home_hero_button>
-                                    <button type="button" className="btn btn-primary">Create My Resume</button>
+                                        <button type="button" className="btn btn-primary">Create My Resume</button>
 
                                     </Home_hero_button>
                                 </Home_hero_cta>
+                                <Home_hero_counter>
+                                    <Home_hero_animated_label>
+                                        <Hero_animated />
+                                        <home_hero__counter_number>
+                                            30,935
+                                        </home_hero__counter_number>  resumes created today
+                                    </Home_hero_animated_label>
+                                </Home_hero_counter>
                             </Home_hero_main_content>
+                            {/* <Home_hero_resume /> */}
+
                         </Home_hero_main>
                     </Home_hero_container>
                 </Home_hero>
+
+                <Logo>
+                    <Grid_container>
+                        <Logo_list>
+                            <Logo_item>
+                                <Farbus/>
+                            </Logo_item>
+                        </Logo_list>
+                    </Grid_container>
+                </Logo>
+
             </Hoome>
 
 
