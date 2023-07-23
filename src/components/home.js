@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import farbus from '../src/Public/farbus.webp'
+// import farbus from '../src/Public/farbus.webp';
+// import dublin from '../src/Public/farbus.webp';
+import farbus from '../Public/farbus.webp';
+import dublin from '../../src/Public/dublin.jpg'
 
 
 const Main = styled.div`
@@ -106,18 +109,18 @@ const Navbar_auth = styled.div`
 
 const Button_ghost = styled.div`
     background-color: initial;
-    border: 1px solid var(--blue-50);
-    color: var(--blue-50);
+    border: 1px solid blue;
+    color: blue;
     padding: 13px 23px;
 `
 const Button = styled.div`
  -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: var(--blue-50);
+    background-color: blue;
     border-radius: 4px;
     border-width: 0;
-    color: var(--white);
+    color: white;
     cursor: pointer;
     display: inline-block;
     font-size: 18px;
@@ -172,7 +175,7 @@ const Home_hero_main = styled.div`
 align-items: center;
 display: -webkit-box;
 display: -ms-flexbox;
-display: flex;
+display: grid;
 width: 100%;
     `
 
@@ -189,6 +192,7 @@ display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 width: 100%;
+height:70vh
     `
 
 const Home_hero_main_title = styled.div`
@@ -276,21 +280,25 @@ display: inline-block;
 
 const home_hero__counter_number = styled.div`
     display: inline-block;
-    will-change: transform;`
+    will-change: transform;
+    `
+const Seconds = styled.div`
+    height:50vh;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+    
+    `
 
-const Home_hero_resume = styled.a`
-    -webkit-animation-duration: 5s;
-    animation-duration: 5s;
-    -webkit-animation-name: heroResumeSlide;
-    animation-name: heroResumeSlide;
-    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
-    animation-timing-function: cubic-bezier(0,1,0,1);
+
+const Home_hero_resume = styled.div`
     display: block;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
     width: 770px;
-    background: url("images/logo.png") no-repeat;
+    Height: 30vh;
+    // background-image: url(${dublin}) no-repeat;
     `
 const Logo = styled.div`
     background-color: var(--white);
@@ -334,8 +342,7 @@ const Logo_item = styled.div`
     width: 141px;`
 
 const Farbus = styled.div`
-    background-image=url(${farbus});
-    
+    // background-image=url(${farbus});
     `
 
 
@@ -351,6 +358,8 @@ const Home = () => {
                                 <Span></Span>
                             </a>
                             <Navbar_menu>
+
+
                                 <Navbar_link> Resume
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" >
                                         <path fillRule="evenodd" clipRule="evenodd" d="M10.2 10.4l2.9-2.8L14.5 9l-4.3 4.2L6 9l1.4-1.4 2.8 2.8z"></path>
@@ -420,17 +429,23 @@ const Home = () => {
                                     </Home_hero_animated_label>
                                 </Home_hero_counter>
                             </Home_hero_main_content>
-                            {/* <Home_hero_resume /> */}
+                            <Home_hero_resume >
+                                <img src="{../../src/Public/dublin.jpg}" alt="" />
+                            </Home_hero_resume>
+
 
                         </Home_hero_main>
                     </Home_hero_container>
                 </Home_hero>
+                {/* <Seconds>
+                    <Home_hero_resume />
+                </Seconds> */}
 
                 <Logo>
                     <Grid_container>
                         <Logo_list>
                             <Logo_item>
-                                <Farbus/>
+                                <Farbus />
                             </Logo_item>
                         </Logo_list>
                     </Grid_container>
